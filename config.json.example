@@ -1,43 +1,60 @@
 {
   "session1": {
     "SESSION_ID": "levanter_sessionid",
-    "PREFIX": "^[.,!]",
-    "SUDO": "0",
-    "STICKER_PACKNAME": "❤️,LyFE",
-    "ALWAYS_ONLINE": "false",
-    "RMBG_KEY": "null",
-    "WARN_LIMIT": "3",
-    "FORCE_LOGOUT": "false",
-    "DISABLE_BOT": "null",
-    "ANTILINK_MSG": "_Antilink Detected &mention kicked_",
-    "ANTISPAM_MSG": "_Antispam Detected &mention kicked_",
-    "ANTIWORDS_MSG": "_AntiWord Detected &mention kicked_",
-    "ANTIWORDS": "word",
-    "REJECT_CALL": "false",
-    "AUTO_STATUS_VIEW": "false",
-    "SEND_READ": "false",
-    "AJOIN": "false",
-    "GPT": "free",
-    "MODEL": "gpt-3.5-turbo",
-    "ANTI_DELETE": "null",
-    "PERSONAL_MESSAGE": "null",
-    "DISABLE_START_MESSAGE": "false",
-    "WARN_MESSAGE": "⚠️WARNING⚠️\n*User :* &mention\n*Warn :* &warn\n*Remaining :* &remaining",
-    "WARN_RESET_MESSAGE": "WARN RESET\nUser : &mention\nRemaining : &remaining\nWARN_KICK_MESSAGE=&mention kicked",
-    "WARN_KICK_MESSAGE": "&mention kicked",
-    "DELETE_TYPE": "all",
-    "LIST_TYPE": "text",
-    "BING_COOKIE": "",
-    "GEMINI_API_KEY": "",
-    "GROUP_ADMINS": "",
-    "CMD_REACTION": "true"
+    "PREFIX": "^[.,!]", 
+    "SUDO": "0", 
+    "STICKER_PACKNAME": "❤️,LyFE", 
+    "ALWAYS_ONLINE": "false", 
+    "RMBG_KEY": "null", 
+    "WARN_LIMIT": "3", 
+    "FORCE_LOGOUT": "false", 
+    "DISABLE_BOT": "null", 
+    "ANTILINK_MSG": "_Antilink Detected &mention kicked_", 
+    "ANTISPAM_MSG": "_Antispam Detected &mention kicked_", 
+    "ANTIWORDS_MSG": "_AntiWord Detected &mention kicked_", 
+    "ANTIWORDS": "word", 
+    "REJECT_CALL": "false", 
+    "AUTO_STATUS_VIEW": "false", 
+    "SEND_READ": "false", 
+    "AJOIN": "false", 
+    "GPT": "free", 
+    "MODEL": "gpt-3.5-turbo", 
+    "ANTI_DELETE": "null", 
+    "PERSONAL_MESSAGE": "null", 
+    "DISABLE_START_MESSAGE": "false", 
+    "WARN_MESSAGE": "⚠️WARNING⚠️\n*User :* &mention\n*Warn :* &warn\n*Remaining :* &remaining", 
+    "WARN_RESET_MESSAGE": "WARN RESET\nUser : &mention\nRemaining : &remaining", 
+    "WARN_KICK_MESSAGE": "&mention kicked", 
+    "DELETE_TYPE": "all", 
+    "LIST_TYPE": "text", 
+    "BING_COOKIE": "", 
+    "GEMINI_API_KEY": "", 
+    "GROUP_ADMINS": "", 
+    "CMD_REACTION": "true",
+    "BACKUP_FREQUENCY": "24", // Frequency for backups (in hours)
+    "RATE_LIMIT": "1000", // Max API requests per minute
+    "ERROR_LOGGING": "true", // Enable error logging
+    "2FA": "false", // Two-factor authentication toggle
+    "CUSTOM_COMMANDS": "null", // Custom commands feature
+    "AI_MODERATION": "false", // Toggle AI-based moderation
+    "AI_API_KEY": "null" // API key for AI moderation service (e.g., OpenAI)
   },
+  
   "session2": {
     "SESSION_ID": "levanter_sessionid",
-    "PREFIX": "null"
+    "PREFIX": "null", 
+    "SUDO": "1", // Admin session
+    "ENABLE_2FA": "true", // Enable two-factor authentication for extra security
+    "CUSTOM_COMMANDS": "ban, mute, warn" // Custom commands specific to this session
   },
+  
   "session3": {
     "SESSION_ID": "levanter_sessionid",
-    "PREFIX": ".."
+    "PREFIX": "..",
+    "SUDO": "0", // Standard user session
+    "AUTO_STATUS_VIEW": "true", // Auto-view status
+    "SEND_READ": "true", // Send blue ticks automatically
+    "FORCE_LOGOUT": "true", // Force logout if needed
+    "BRAINSHOP": "159501,6pq8dPiYt7PdqHz3" // API for chatbot functionalities
   }
 }
