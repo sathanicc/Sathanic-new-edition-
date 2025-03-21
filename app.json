@@ -1,140 +1,189 @@
 {
-  "name": "levanter@5.2.3",
-  "description": "",
-  "keywords": ["noedjs"],
+  "name": "sathanic-new-edition",
+  "description": "A modern WhatsApp bot with advanced features for group moderation, automation, and more.",
+  "keywords": ["nodejs", "whatsapp", "bot", "moderation", "automation", "AI", "security"],
   "success_url": "/",
   "stack": "container",
   "env": {
     "ALWAYS_ONLINE": {
-      "description": "show bot number last seen as online",
+      "description": "Show bot number's last seen as online.",
       "required": false,
       "value": "false"
     },
     "LOG_MSG": {
-      "description": "Show whatsapp msgs in log",
+      "description": "Show WhatsApp messages in the logs for debugging and analysis.",
       "required": false,
       "value": "false"
     },
     "SUDO": {
-      "description": "admin",
+      "description": "Admin users' phone numbers, comma-separated.",
       "required": false,
       "value": ""
     },
     "PREFIX": {
-      "description": "prefix, check for more",
+      "description": "Command prefix for bot interactions.",
       "required": false,
       "value": "."
     },
     "SESSION_ID": {
-      "description": "session id",
+      "description": "Session ID for authentication.",
       "required": true,
       "value": ""
     },
     "STICKER_PACKNAME": {
-      "description": "sticker pack info",
+      "description": "Sticker pack name for custom stickers.",
       "required": false,
-      "value": "❤️,LyFE"
+      "value": "sathanic"
     },
     "HEROKU_APP_NAME": {
-      "description": "Heroku app name, same as above entered.",
+      "description": "Heroku app name, used for identification.",
       "required": true
     },
     "HEROKU_API_KEY": {
-      "description": "Heroku account api key, https://dashboard.heroku.com/account",
+      "description": "Heroku API key to manage app programmatically.",
       "required": true
     },
     "RMBG_KEY": {
-      "description": "API key from remove.bg, required for plugin rmbg",
+      "description": "API key from remove.bg for background removal.",
       "required": false,
       "value": "null"
     },
     "LANGUAG": {
-      "description": "Default Language for tts or trt",
+      "description": "Default language for text-to-speech or text-to-robot.",
       "required": false,
       "value": "en"
     },
     "WARN_LIMIT": {
-      "description": "Maximum number of wanings to a person.",
+      "description": "Maximum warnings allowed before a user is restricted.",
       "required": false,
       "value": "3"
     },
     "FORCE_LOGOUT": {
-      "description": "In Some scenario have to logout web, Only such case make this true and back to false after logout.",
+      "description": "Force logout the bot in specific cases.",
       "required": false,
       "value": "false"
     },
     "DISABLE_BOT": {
-      "description": "Example : jid,jid,... where bot not works in both ways.",
+      "description": "List of JIDs (users/groups) where the bot is disabled.",
       "required": false,
       "value": "null"
     },
     "ANTILINK_MSG": {
-      "description": "Message send when antilink and action is kick.",
+      "description": "Message when an anti-link action is triggered.",
       "required": false,
       "value": "_Antilink Detected &mention kicked_"
     },
     "ANTISPAM_MSG": {
-      "description": "Message send when antispam.",
+      "description": "Message when an anti-spam action is triggered.",
       "required": false,
       "value": "_Antispam Detected &mention kicked_"
     },
     "ANTIWORDS_MSG": {
-      "description": "Message send when antiword.",
+      "description": "Message when an anti-word action is triggered.",
       "required": false,
       "value": "_Antiword Detected &mention kicked_"
     },
     "ANTIWORDS": {
-      "description": "words that not allowed in chats.",
+      "description": "List of prohibited words for chats.",
       "required": false,
       "value": "word1,word2,word3"
     },
     "SS_TOKEN": {
-      "description": "token from https://app.screenshotapi.net/dashboard",
+      "description": "API token from ScreenshotAPI for capturing screenshots.",
       "required": false,
       "value": ""
     },
     "REJECT_CALL": {
-      "description": "auto reject call, if set as true",
+      "description": "Auto reject incoming calls if set to true.",
       "required": false,
       "value": "false"
     },
     "AUTO_STATUS_VIEW": {
-      "description": "view others status",
+      "description": "Automatically view others' statuses.",
       "required": false,
       "value": "false"
     },
     "SEND_READ": {
-      "description": "send blue tick",
+      "description": "Send read receipts (blue ticks) for messages.",
       "required": false,
       "value": "false"
     },
     "AJOIN": {
-      "description": "Accept Group join request(Group privacy)",
+      "description": "Automatically accept group join requests.",
       "required": false,
       "value": "true"
     },
     "PERSONAL_MESSAGE": {
-      "description": "Send a Welcome message on personal chat",
+      "description": "Send a welcome message in personal chats.",
       "required": false,
       "value": "null"
     },
     "DISABLE_START_MESSAGE": {
-      "description": "Disable start Message",
+      "description": "Disable the start message for the bot.",
       "required": false,
       "value": "false"
+    },
+    "MAX_RETRIES": {
+      "description": "Max retries for connection in case of failure.",
+      "required": false,
+      "value": "5"
+    },
+    "TIMEZONE": {
+      "description": "Set the timezone for time-based actions.",
+      "required": false,
+      "value": "UTC"
+    },
+    "USER_AGENT": {
+      "description": "Custom user agent for web scraping or bot detection.",
+      "required": false,
+      "value": "whatsapp-bot/1.0.0"
+    },
+    "ENABLE_AI_MODERATION": {
+      "description": "Enable AI-based moderation for detecting harmful content.",
+      "required": false,
+      "value": "false"
+    },
+    "BACKUP_FREQUENCY": {
+      "description": "Frequency for automated database backups (in hours).",
+      "required": false,
+      "value": "24"
+    },
+    "ENABLE_2FA": {
+      "description": "Enable two-factor authentication for the bot.",
+      "required": false,
+      "value": "false"
+    },
+    "CUSTOM_COMMANDS": {
+      "description": "Custom commands that can be defined by the admin users.",
+      "required": false,
+      "value": "null"
     }
   },
   "addons": [
     {
       "plan": "heroku-postgresql:basic"
+    },
+    {
+      "plan": "sendgrid:starter",
+      "description": "Email service for notifications or reports"
+    },
+    {
+      "plan": "heroku-redis:hobby-dev",
+      "description": "Redis database for caching and fast data storage"
     }
   ],
-
-  "buildpacks": [],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
   "formation": {
     "web": {
       "quantity": 1,
       "size": "basic"
     }
+  },
+  "scripts": {
+    "postdeploy": "npm run migrate && npm run backup"
   }
 }
